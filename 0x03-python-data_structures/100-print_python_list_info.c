@@ -12,7 +12,7 @@ void print_python_list_info(PyObject *p)
 	int i;
 	PyObject *item;
 
-	len = PyListize(p);
+	len = PyList_Size(p);
 
 	PyListObject *aux = (PyListObject *)p;
 
