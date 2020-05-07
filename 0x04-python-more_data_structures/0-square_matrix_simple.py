@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def pow_(num):
-    return pow(num, 2)
+    return num * num
 
 def square_matrix_simple(matrix=[]):
     matrix_n = []
