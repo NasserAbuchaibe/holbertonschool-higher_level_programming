@@ -1,6 +1,20 @@
 #!/usr/bin/python3
+
+"""2-square.py: Class Square"""
+
+
 class Square:
+    """Class  Square: initialize the size attribute """
     def __init__(self, size=0):
+        """
+        initialize the square class with size
+
+        Args:
+        size: size of square
+
+        Return:
+        None
+        """
         if type(size) != int:
             raise TypeError("size must be an integer")
         elif size < 0:
