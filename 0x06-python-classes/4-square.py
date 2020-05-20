@@ -11,7 +11,7 @@ class Square:
         Args:
         size: size of square
         Return:
-        None 
+        None
         """
         if type(size) != int:
             raise TypeError("size must be an integer")
