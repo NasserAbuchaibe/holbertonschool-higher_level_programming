@@ -1,0 +1,78 @@
+Using ``print_square``
+-----------------------
+
+print_square - function that prints a square with the character #
+
+Args:
+-----
+size: is the size length of the square, must be an integer and
+      greater than or equal to 0
+
+Return: void
+
+
+Step 1: Import print_square
+---------------------------
+
+>>> print_square = __import__('4-print_square').print_square
+
+
+Typical cases:
+--------------
+
+
+>>> print_square(4)
+####
+####
+####
+####
+
+
+>>> print_square(0)
+<BLANKLINE>
+
+
+>>> print_square()
+Traceback (most recent call last):
+...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+
+Atypical cases:
+---------------
+
+
+>>> print_square(4.5)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+
+>>> print_square(-5)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+
+>>> print_square(-4.5)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+
+>>> print_square('4asd')
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+
+>>> print_square(4, 6)
+Traceback (most recent call last):
+....
+TypeError: print_square() takes 1 positional argument but 2 were given
+
+
+>>> print_square(float('inf'))
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
