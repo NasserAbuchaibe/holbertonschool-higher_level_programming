@@ -1,0 +1,45 @@
+Using ``say_my_nam``
+----------------------
+
+first_name and last_name must be strings.
+last_name default is an empty string if string is not passed as argument
+
+Step 1: import ``say_my_name``
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Typical cases:
+--------------
+
+>>> say_my_name("Nasser", "Abuchaibe")
+My name is Nasser Abuchaibe
+
+
+>>> say_my_name("Nasser")
+My name is Nasser 
+
+
+Atypical cases:
+---------------
+
+
+>>> say_my_name(12)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+
+>>> say_my_name("Nasser", 12)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+
+>>> say_my_name(17, 12)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
