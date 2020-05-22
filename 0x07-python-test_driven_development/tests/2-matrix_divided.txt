@@ -1,0 +1,82 @@
+Using `` matrix_divided``
+---------------------------
+
+- This function that divides all elements of a matrix.
+- Matrix must be a list of lists of integers or floats.
+- Each row of the matrix must be of the same size.
+- div must be a number (integer or float).
+- div cant be equal to 0.
+- All elements of the matrix should be divided by div, rounded to 
+  2 decimal places.
+- Returns a new matrix
+
+
+Step 1: import ``matrix_divided``
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Step 2: We create test matrix
+>>> matrix = [[2, 4, 6], [8, 10, 12]]
+
+Typical case:
+
+>>> matrix_divided(matrix, 2)
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+
+Atypical cases:
+
+
+>>> matrix_divided(matrix)
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+
+>>> matrix1 = [['n', 'a', 'g'], ['1', 7, 5]]
+>>> matrix_divided(matrix1, 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> matrix_divided(matrix, 'g')
+Traceback (most recent call last):
+TypeError: div must be a number
+
+
+>>> matrix_divided(matrix, float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+
+>>> matrix_divided([[1, 2, 3, 4], [5, 6, 7]], 2)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+
+>>> matrix2 = [[]]
+>>> matrix_divided(matrix2, 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> matrix3 = 1
+>>> matrix_divided(matrix3, 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> matrix_divided(matrix, float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+
+>>> matrix_divided(matrix, float('NaN'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+
+
