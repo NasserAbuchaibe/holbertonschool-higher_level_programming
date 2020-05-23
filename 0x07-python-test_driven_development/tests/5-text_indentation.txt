@@ -1,0 +1,63 @@
+Using ``text_indentation``
+
+This function prints a text with 2 new lines after each of these 
+characters: ., ? and :
+
+Step 1: Import text_indentation
+-------------------------------
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Typical case:
+-------------
+
+>>> text_indentation("Hola como estas. el clima agradable? todo bien:")
+Hola como estas.
+<BLANKLINE>
+el clima agradable?
+<BLANKLINE>
+todo bien:
+<BLANKLINE>
+
+
+
+>>> text_indentation("hola como estas")
+hola como estas
+
+
+
+>>> text_indentation(234234)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+
+
+>>> text_indentation("Nasser", "Abuchaibe")
+Traceback (most recent call last):
+...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+
+>>> nasser = ""
+>>> text_indentation(nasser)
+<BLANKLINE>
+
+
+
+>>> text_indentation("? : .")
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+.
+<BLANKLINE>
+
+
