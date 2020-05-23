@@ -2,7 +2,7 @@
 """Unittest for max_integer([..])
 """
 import unittest
-max_integer = __import__("6-max_integer").max_integer
+max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
@@ -46,8 +46,6 @@ class TestMaxInteger(unittest.TestCase):
     def test_strList(self):
         self.assertRaises(TypeError, max_integer, [10, 4, 21, "9"])
 
-    def test_mult_args(self):
-        self.assertRaises(TypeError, max_integer, [5, 6, 2], [4, 8, 1])
 
 if __name__ == '__main__':
     unittest.main()
