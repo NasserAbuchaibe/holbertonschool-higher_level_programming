@@ -5,7 +5,7 @@ import unittest
 max_integer = __import__("6-max_integer").max_integer
 
 
-class Test_mxInteg(unittest.TestCase):
+class TestMaxInteger(unittest.TestCase):
 
     def test_maxInteger(self):
         _list = [10, 4, 21, 9]
