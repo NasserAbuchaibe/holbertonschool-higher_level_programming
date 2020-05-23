@@ -57,12 +57,6 @@ Traceback (most recent call last):
 TypeError: Each row of the matrix must have the same size
 
 
->>> matrix2 = [[]]
->>> matrix_divided(matrix2, 2)
-Traceback (most recent call last):
-TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-
 >>> matrix3 = 1
 >>> matrix_divided(matrix3, 2)
 Traceback (most recent call last):
