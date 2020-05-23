@@ -28,7 +28,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(reret, None)
 
     def test_str(self):
-        _list = "Nasser"
+        _list = "Naser"
         reret = max_integer(_list)
         self.assertEqual(reret, 's')
 
@@ -46,6 +46,8 @@ class TestMaxInteger(unittest.TestCase):
     def test_strList(self):
         self.assertRaises(TypeError, max_integer, [10, 4, 21, "9"])
 
+    def test_mult_args(self):
+        self.assertRaises(TypeError, max_integer, (5, 6, 2), [4, 8, 1])
 
 if __name__ == '__main__':
     unittest.main()
