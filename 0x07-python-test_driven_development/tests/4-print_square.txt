@@ -29,7 +29,6 @@ Typical cases:
 
 
 >>> print_square(0)
-<BLANKLINE>
 
 
 >>> print_square()
