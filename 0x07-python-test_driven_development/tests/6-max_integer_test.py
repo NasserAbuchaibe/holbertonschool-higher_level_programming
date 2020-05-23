@@ -4,6 +4,7 @@
 import unittest
 max_integer = __import__("6-max_integer").max_integer
 
+
 class Test_mxInteg(unittest.TestCase):
 
     def test_maxInteger(self):
@@ -43,8 +44,7 @@ class Test_mxInteg(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, 10)
 
     def test_strList(self):
-        _list = [10, 4, 21, "9"]
-        self.assertRaises(TypeError, max_integer, _list)
+        self.assertRaises(TypeError, max_integer, [10, 4, 21, "9"])
 
     def test_mult_args(self):
         self.assertRaises(TypeError, max_integer, [5, 6, 2], [4, 8, 1])
