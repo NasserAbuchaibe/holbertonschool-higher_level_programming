@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""1-rectangle.py: Class Rectagle
+"""2-rectangle.py: Class Rectagle
 """
 
 
@@ -7,7 +7,7 @@ class Rectangle:
     """class Rectagle
     """
 
-    def __init__(self, width, height):
+    def __init__(self, width=0, height=0):
         """ Sets a height and width
         Args:
             width (int): width rectangle
@@ -51,3 +51,29 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
+
+    def area(self):
+        """calculate the area of ​​a rectangle
+        """
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """calculate the perimeter of ​​a rectangle
+        """
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        else:
+            return (self.__width + self.__height) * 2
+
+    def __str__(self):
+        """ print the rectangle """
+        aux_str = ""
+        if self.__width == 0 or self.__height == 0:
+            return aux_str
+        for x in range(self.__height):
+            if x == self.__height - 1:
+                aux_str += '#' * self.__width
+            else:
+                aux_str += ('#' * self.__width) + '\n'
+        return aux_str
+    
