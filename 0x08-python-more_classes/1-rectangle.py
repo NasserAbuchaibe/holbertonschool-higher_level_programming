@@ -3,7 +3,7 @@
 """
 
 
-class Rectagle:
+class Rectangle:
     """class Rectagle
     """
 

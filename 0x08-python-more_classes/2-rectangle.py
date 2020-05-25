@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""2-rectangle.py: Class Rectagle
+"""2-rectangle.py: Rectagle Class
 """
 
 
-class Rectagle:
+class Rectangle:
     """class Rectagle
     """
 
@@ -19,7 +19,7 @@ class Rectagle:
     @property
     def width(self):
         """ returns width """
-        return = self.__width
+        return self.__width
 
     @width.setter
     def width(self, value):
