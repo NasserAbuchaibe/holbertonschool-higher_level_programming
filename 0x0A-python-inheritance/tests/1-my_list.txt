@@ -1,0 +1,47 @@
+``1-my_list``
+==============
+
+Usig ``MyList``
+----------------
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList()
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.append(2)
+>>> my_list.append(1)
+>>> my_list.append(4)
+
+Check inherits:
+>>> issubclass(MyList, list)
+True
+
+>>> print(my_list)
+[3, 5, 2, 1, 4]
+
+case usal:
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+negative Number:
+>>> my_list.append(-3)
+>>> print(my_list)
+[3, 5, 2, 1, 4, -3]
+
+>>> my_list.print_sorted()
+[-3, 1, 2, 3, 4, 5]
+
+emtpty list:
+>>> my_list2 = MyList()
+>>> print(my_list2)
+[]
+
+>>> my_list2.print_sorted()
+[]
+
+
+List with 1 element:
+>>> my_list3 = MyList()
+>>> my_list3.append(1)
+>>> my_list3.print_sorted()
+[1]
