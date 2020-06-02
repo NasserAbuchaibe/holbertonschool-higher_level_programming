@@ -11,6 +11,12 @@ class Rectangle(BaseGeometry):
         BaseGeometry (Class): class to inherit
     """
     def __init__(self, width, height):
+        """
+
+        Args:
+            width (int): width
+            height (int): height
+        """
         self.integer_validator("widht", width)
         self.integer_validator("height", height)
         self.__width = width
