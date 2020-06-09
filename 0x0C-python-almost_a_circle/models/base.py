@@ -91,26 +91,33 @@ class Base:
         with open(file_csv, 'w', newline='') as f:
             csv_f = csv.writer(f)
             if cls.__name__ is "Rectangle":
-                for x in list_objs:
-                    csv_f.writerow([x.id, x.width, x.height,
-                                    x.x, x.y])
+                for o in list_objs:
+                    csv_f.writerow([o.id, o.width, o.height,
+                                    o.x, o.y])
             elif cls.__name__ is "Square":
-                for x in list_objs:
-                    csv_f.writerow([x.id, x.size, x.x, x.y])
+                for o in list_objs:
+                    csv_f.writerow([o.id, o.size, o.x, o.y])
 
     @classmethod
     def load_from_file_csv(cls):
-        """ returns a list of instances
-        """
-        file_csv = cls.__name__ + '.csv'
+        """deserializes a list of Rectangles/Squares in csv"""
+        file_csv = cls.__name__ + ".csv"
         fl = []
         try:
-            with open(file_csv, mode='r') as f:
-                csv_f = csv.DictReader(f)
-                for x in csv_f:
-                    for k, v in x.items():
-                        x[k] = int(v)
-                    fl.append(x)
-            return [cls.create(**obj) for obj in fl]
-        except BaseException:
-            return fl
+            with open(file_csv, 'r') as f:
+                csv_r = csv.reader(f)
+                for field in csv_r:
+                    if cls.__name__ is "Rectangle":
+                        dict1 = {"id": int(field[0]),
+                                 "width": int(field[1]),
+                                 "height": int(field[2]),
+                                 "x": int(field[3]),
+                                 "y": int(field[4])}
+                    elif cls.__name__ is "Square":
+                        dict1 = {"id": int(field[0]), "size": int(field[1]),
+                                 "x": int(field[2]), "y": int(field[3])}
+                    obj = cls.create(**dict1)
+                    fl.append(obj)
+        except:
+            pass
+        return fl
