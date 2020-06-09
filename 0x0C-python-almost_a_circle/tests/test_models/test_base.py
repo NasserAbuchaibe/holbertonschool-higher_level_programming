@@ -9,9 +9,9 @@ class Test_Base(unittest.TestCase):
     def test_style_base(self):
         """test pep8
         """
-        style = pep8.StyleGuide()
+        style = pep8.StyleGuide(quiet=True)
         m = style.check_files(["models/base.py"])
-        self.assertEqual(m.total_errors, 0, "fix pep8")
+        self.assertEqual(m.total_errors, 0)
 
     def test_id(self):
         """ set id """
