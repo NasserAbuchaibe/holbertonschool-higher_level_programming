@@ -4,6 +4,7 @@
 
 
 import json
+import csv
 
 
 class Base:
@@ -81,3 +82,35 @@ class Base:
         except:
             pass
         return fl
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ writes the CSV string representation of list_objs to a file
+        """
+        file_csv = cls.__name__ + ".csv"
+        with open(file_csv, 'w', newline='') as f:
+            csv_f = csv.writer(f)
+            if cls.__name__ is "Rectangle":
+                for x in list_objs:
+                    csv_f.writerow([x.id, x.width, x.height,
+                                    x.x, x.y])
+            elif cls.__name__ is "Square":
+                for x in list_objs:
+                    csv_f.writerow([x.id, x.size, x.x, x.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ returns a list of instances
+        """
+        file_csv = cls.__name__ + '.csv'
+        fl = []
+        try:
+            with open(file_csv, mode='r') as f:
+                csv_f = csv.DictReader(f)
+                for x in csv_f:
+                    for k, v in x.items():
+                        x[k] = int(v)
+                    fl.append(x)
+            return [cls.create(**obj) for obj in fl]
+        except BaseException:
+            return fl
