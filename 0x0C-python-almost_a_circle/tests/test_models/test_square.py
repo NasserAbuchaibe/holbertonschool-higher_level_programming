@@ -1,4 +1,5 @@
 import unittest
+import pep8
 import io
 from io import StringIO
 import sys
@@ -10,6 +11,13 @@ Square = square.Square
 
 class TestSquare(unittest.TestCase):
     """ Testing the Square class """
+
+    def test_style_base(self):
+        """test pep8
+        """
+        style = pep8.StyleGuide()
+        m = style.check_files(["models/base.py"])
+        self.assertEqual(m.total_errors, 0, "fix pep8")
 
     @classmethod
     def test_sq(cls):

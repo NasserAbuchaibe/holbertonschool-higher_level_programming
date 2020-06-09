@@ -1,9 +1,17 @@
 import unittest
 from models.base import Base
+import pep8
 
 
 class Test_Base(unittest.TestCase):
     """ Testing the Base class """
+
+    def test_style_base(self):
+        """test pep8
+        """
+        style = pep8.StyleGuide()
+        m = style.check_files(["models/base.py"])
+        self.assertEqual(m.total_errors, 0, "fix pep8")
 
     def test_id(self):
         """ set id """
