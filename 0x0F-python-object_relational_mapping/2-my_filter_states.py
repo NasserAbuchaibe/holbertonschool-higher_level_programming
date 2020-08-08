@@ -14,7 +14,8 @@ def filterEstates():
                 BY id ASC'.format(argv[4]))
     states = cur.fetchall()
     for row in states:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
 
     db.close()
 
