@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" ok """
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import (create_engine)
