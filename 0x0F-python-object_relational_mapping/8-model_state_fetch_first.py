@@ -13,9 +13,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    sta = session.query(State).order_by(State.id).first()
-    if sta:
-        print("{}: {}".format(sta.id, sta.name))
+    states = session.query(State).order_by(State.id).first()
+    if states:
+        print("{}: {}".format(states.id, states.name))
     else:
-        pass
+        print("Nothing")
     session.close()
